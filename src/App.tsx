@@ -1,6 +1,7 @@
 import { Preloader } from './components/layout/Preloader'
 import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
+import { Seo } from './components/seo/Seo'
 import { HeroSection } from './components/sections/HeroSection'
 import { LendersSection } from './components/sections/LendersSection'
 import { ChallengesSection } from './components/sections/ChallengesSection'
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <>
+      <Seo />
       <Preloader />
       <Header />
       <main>

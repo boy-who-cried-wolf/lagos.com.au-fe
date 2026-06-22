@@ -1,0 +1,17 @@
+{
+  "name": "Lagos Financial",
+  "short_name": "Lagos",
+  "description": "Australian Mortgage Specialists",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fefaf6",
+  "theme_color": "#23395b",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
