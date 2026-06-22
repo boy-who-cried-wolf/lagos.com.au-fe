@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/Inter/inter-v20-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/fonts/Inter/inter-v20-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/fonts/Inter/inter-v20-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/Inter/inter-v20-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Neulis;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/Neulis/Neulis-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Neulis;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/fonts/Neulis/NeulisAlt-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Neulis Cursive";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/Neulis/neulis-cursive-regular.otf") format("opentype");
+}
+
+@theme {
+  --color-primary: #23395b;
+  --color-secondary: #ffa37c;
+  --color-text: #262121;
+  --color-accent: #76c6b3;
+  --color-bg: #fefaf6;
+  --font-inter: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-neulis: Neulis, Georgia, serif;
+  --font-neuliscursive: "Neulis Cursive", cursive;
+}
+
+:root {
+  --container-padding: clamp(1rem, 4vw, 2rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-inter);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body:not(.loaded) {
+  overflow: hidden;
+}
+
+@layer base {
+  a {
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1344px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+section:not(#about-us) {
+  scroll-margin-top: 80px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .animate-on-scroll {
+    opacity: 0;
+  }
+
+  .animate-on-scroll.in-view {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+  }
+
+  .animate-fade-in.in-view {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-slide-left {
+    opacity: 0;
+  }
+
+  .animate-slide-left.in-view {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+
+  .animate-slide-right {
+    opacity: 0;
+  }
+
+  .animate-slide-right.in-view {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+
+  .animate-zoom-in {
+    opacity: 0;
+  }
+
+  .animate-zoom-in.in-view {
+    animation: zoomIn 0.8s ease-out forwards;
+  }
+
+  .animate-delay-100.in-view {
+    animation-delay: 0.1s;
+  }
+
+  .animate-delay-200.in-view {
+    animation-delay: 0.2s;
+  }
+
+  .animate-delay-300.in-view {
+    animation-delay: 0.3s;
+  }
+}
+
+.lenders-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.reviews-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.reviews-bullet {
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  background: #d1d5db;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease;
+}
+
+.reviews-bullet-active {
+  background: var(--color-primary);
+}
