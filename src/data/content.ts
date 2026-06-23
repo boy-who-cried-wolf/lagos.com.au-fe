@@ -1,10 +1,3 @@
-export const navLinks = [
-  { href: '#services', label: 'Services' },
-  { href: '#about-us', label: 'About Us' },
-  { href: '#how-it-works', label: 'How It Works' },
-  { href: '#testimonials', label: 'Testimonials' },
-] as const
-
 export const heroCards = [
   { label: 'Buy a home', prefix: 'I need to', action: 'hailo' as const, hailoType: 'Buy a home' },
   { label: 'Pre-approval', prefix: 'I need', action: 'hailo' as const, hailoType: 'Pre-approval' },
@@ -23,88 +16,111 @@ export const lenders = [
 ] as const
 
 export const painPoints = [
-  { strong: 'Overwhelmed by Choice', text: ' - no clear way to compare them.' },
-  { strong: 'Stuck with the Wrong Loan', text: ' - Paying more than you need' },
-  { strong: 'Going It Alone', text: ' - without expert guidance or support.' },
+  {
+    strong: 'Positive Cash Flow',
+    text: ' — invest in properties that will give you a positive cash flow.',
+  },
+  {
+    strong: 'Expert Support',
+    text: ' — feel confident knowing that you have a team of experts with you all the way.',
+  },
+  {
+    strong: 'Financial Education',
+    text: ' — equip yourself with the financial education you were never given.',
+  },
 ] as const
 
 export const challengeBadges = [
-  { text: 'Paying Too Much', className: 'absolute -top-4 right-4 lg:-top-5 lg:right-0 rotate-[-10deg] bg-[#fc6038] text-white' },
-  { text: 'Wrong Loan Structure', className: 'absolute top-[14%] xsm:top-[9%] -right-4 lg:-right-8 bg-accent text-text' },
-  { text: 'Confusing Options', className: 'absolute top-[32%] xsm:top-[22%] -right-2 lg:-right-6 rotate-[10deg] bg-[#3963fb] text-white' },
+  {
+    text: 'Transparency',
+    className: 'absolute -top-4 right-4 lg:-top-5 lg:right-0 rotate-[-10deg] bg-[#fc6038] text-white',
+  },
+  {
+    text: 'Results',
+    className: 'absolute top-[14%] xsm:top-[9%] -right-4 lg:-right-8 bg-accent text-text',
+  },
+  {
+    text: 'Freedom',
+    className: 'absolute top-[32%] xsm:top-[22%] -right-2 lg:-right-6 rotate-[10deg] bg-[#3963fb] text-white',
+  },
 ] as const
 
 export const services = [
   {
-    title: 'First Home Buyer Loans',
-    description: 'Expert guidance to help first-time buyers secure their first property.',
+    title: 'Buy Your First Property',
+    description: 'First home buyer guidance, pre-approval support, and access to grants and exemptions.',
     image: '/assets/images/services/service_1.png',
     wide: false,
+    href: '/buying-a-property',
   },
   {
-    title: 'Home Loans',
-    description: 'Compare mortgage options from multiple lenders to find the best fit.',
+    title: 'Refinance Your Home',
+    description: 'Review your current mortgage, reduce repayments, and unlock equity with the right lender.',
     image: '/assets/images/services/service_2.png',
     wide: false,
+    href: '/refinance-your-home',
   },
   {
-    title: 'Refinancing',
-    description: 'Review your current mortgage and potentially reduce repayments or unlock equity.',
+    title: 'Investment Property',
+    description: 'Residential investment loans structured for cash flow, growth, and long-term portfolio success.',
     image: '/assets/images/services/service_3.png',
     wide: false,
+    href: '/property-investment',
   },
   {
-    title: 'Investment Property Loans',
-    description: 'Strategic finance solutions for building and growing your property portfolio.',
+    title: 'Commercial Property',
+    description: 'Full doc, lease doc, and development finance for commercial investors and owner occupiers.',
     image: '/assets/images/services/service_4.png',
     wide: true,
+    href: '/commercial-property',
   },
   {
-    title: 'Borrowing Power Assessment',
-    description: 'Understand exactly what you can borrow and how to structure your loan for success.',
+    title: 'SMSF Property Investment',
+    description: 'SMSF property loans for investors and owner occupiers, structured to meet compliance requirements.',
     image: '/assets/images/services/service_5.png',
     wide: true,
+    href: '/smsf-loans-property-investment',
   },
 ] as const
 
 export const approachSteps = [
   {
     number: 1,
-    title: 'Tell Us Your Goals',
+    title: 'Transparency',
     description:
-      'We start by understanding your financial situation and creating a clear, actionable plan tailored to your needs.',
+      'Clear advice, honest conversations, and no surprises — so you always understand your options and next steps.',
   },
   {
     number: 2,
-    title: 'Speak With An Expert',
+    title: 'Results',
     description:
-      'A mortgage specialist will call you to discuss your options and develop a detailed roadmap for your home loan.',
+      'Outcome-focused loan structures designed to move you closer to your property and financial goals.',
   },
   {
     number: 3,
-    title: 'Get Your Loan Sorted',
+    title: 'Freedom',
     description:
-      'Our team brings the plan to life, focusing on precision and alignment with your vision through the entire process.',
+      'Build confidence and long-term wealth with financial education and specialist support at every stage.',
   },
 ] as const
 
 export const exclusiveServices = [
   {
-    title: 'Your Power Assessment',
+    title: 'Complimentary Assessment',
     subtitle: 'No Charge',
-    description: 'Understand what you can afford before starting your search',
+    description: 'Book a complimentary assessment and understand your borrowing position before you begin.',
     iconBg: 'bg-[#D81E5B]',
     icon: 'calculator' as const,
   },
   {
-    title: 'Free Mortgage Strategy Session',
-    description: 'Explore the best loan options with an expert',
+    title: 'Expert Mortgage Support',
+    description: 'Work with specialists who truly care and guide you from first conversation through to settlement.',
     iconBg: 'bg-accent',
     icon: 'chat' as const,
   },
   {
-    title: 'Free Home Loan Review',
-    description: 'Already have a mortgage? See if you could be saving',
+    title: 'Financial Education',
+    description: 'Equip yourself with the practical lending knowledge you need to make confident decisions.',
     iconBg: 'bg-[#8fa3b8]',
     icon: 'document' as const,
   },
@@ -113,32 +129,38 @@ export const exclusiveServices = [
 export const loanPills = [
   { label: 'Refinancing', bg: '#3758D3', text: '#fff' },
   { label: 'First Home Buyer', bg: '#70A2E1', text: '#fff' },
-  { label: 'Self-Employed', bg: '#FFA37C', text: '#fff' },
-  { label: 'Upgrading Home', bg: '#FFBAB9', text: '#fff' },
+  { label: 'Construction Loans', bg: '#FFD37D', text: '#262121' },
   { label: 'SMSF Lending', bg: '#76C6B3', text: '#fff' },
   { label: 'Commercial Property', bg: '#3861F9', text: '#fff' },
   { label: 'Investment Property', bg: '#23395B', text: '#fff' },
-  { label: 'Construction Loans', bg: '#FFD37D', text: '#262121' },
+  { label: 'Car Loans', bg: '#FFA37C', text: '#fff' },
+  { label: 'Business Finance', bg: '#FFBAB9', text: '#fff' },
 ] as const
 
 export const testimonials = [
   {
     quote:
-      'Refinanced our mortgage and now saving hundreds each month. Professional service and great communication throughout. Thank you Lagos Financial!',
-    author: 'Emma C., Brisbane QLD',
+      'Highly recommend Victor and the team at Lagos Financial. Victor was professional, clear, and incredibly supportive throughout our home purchase. Communication was excellent and the whole process was smooth.',
+    author: 'Jake Spencer',
     image: '/assets/images/reviews/img_1.png',
   },
   {
     quote:
-      'Lagos Financial made the entire process smooth and stress-free. They found us a great rate and handled all the paperwork. Highly recommend!',
-    author: 'Sarah M., Bondi',
+      "We've used Lagos Financial twice now, and both times the experience has been excellent. Victor and Isoa made securing a loan for our block of land easy and stress-free with clear, practical advice.",
+    author: 'Kellie Gardner',
     image: '/assets/images/reviews/img_2.png',
   },
   {
     quote:
-      "As a first home buyer, I had so many questions. The team was patient, knowledgeable, and helped me understand every step. Couldn't have done it without them.",
-    author: 'James Y., Melbourne VIC',
+      'Victor was incredibly thorough and provided clear explanations about loan structures. The video walkthrough was fantastic and helped us understand exactly how everything worked as first-time investment buyers.',
+    author: 'Vicky Sun',
     image: '/assets/images/reviews/img_3.png',
+  },
+  {
+    quote:
+      'Victor and Lagos Financial have worked with us for a number of years. We have gained investment properties and made significant savings on our own home. Highly recommended.',
+    author: 'Pete L',
+    image: '/assets/images/reviews/img_1.png',
   },
 ] as const
 
@@ -156,14 +178,21 @@ export const loanOptions = [
 export const offices = [
   {
     name: 'Sydney Office',
-    phone: '0483 969 782',
-    tel: '0483969782',
+    phone: '0468 010 679',
+    tel: '0468010679',
     address: 'Level 1, 9-13 Bronte Road Bondi Junction 2022',
   },
   {
     name: 'Launceston Office',
-    phone: '03 6146 1632',
-    tel: '0361461632',
+    phone: '0468 010 679',
+    tel: '0468010679',
     address: '45 Cameron Street, Launceston TAS 7250',
   },
 ] as const
+
+export const podcastContent = {
+  eyebrow: 'Podcast',
+  title: 'Debt to Financial Freedom Podcast',
+  description:
+    "Hosted by Victor Lagos — sharing raw, honest stories and lessons from 17 years in finance to help you take control of your finances and create lasting financial freedom.",
+} as const

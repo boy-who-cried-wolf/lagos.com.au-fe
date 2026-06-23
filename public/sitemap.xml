@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://lagos.com.au/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://lagosfinancial.com.au/</loc></url>
+  <url><loc>https://lagosfinancial.com.au/about-us</loc></url>
+  <url><loc>https://lagosfinancial.com.au/bondi</loc></url>
+  <url><loc>https://lagosfinancial.com.au/launceston</loc></url>
+  <url><loc>https://lagosfinancial.com.au/buying-a-property</loc></url>
+  <url><loc>https://lagosfinancial.com.au/refinance-your-home</loc></url>
+  <url><loc>https://lagosfinancial.com.au/property-investment</loc></url>
+  <url><loc>https://lagosfinancial.com.au/construction-loan</loc></url>
+  <url><loc>https://lagosfinancial.com.au/commercial-property</loc></url>
+  <url><loc>https://lagosfinancial.com.au/smsf-loans-property-investment</loc></url>
+  <url><loc>https://lagosfinancial.com.au/home-loan</loc></url>
+  <url><loc>https://lagosfinancial.com.au/car-loan</loc></url>
+  <url><loc>https://lagosfinancial.com.au/finance</loc></url>
+  <url><loc>https://lagosfinancial.com.au/blog</loc></url>
+  <url><loc>https://lagosfinancial.com.au/podcast</loc></url>
+  <url><loc>https://lagosfinancial.com.au/frequently-asked-questions</loc></url>
+  <url><loc>https://lagosfinancial.com.au/contact</loc></url>
+  <url><loc>https://lagosfinancial.com.au/partners</loc></url>
+  <url><loc>https://lagosfinancial.com.au/privacy-policy</loc></url>
+  <url><loc>https://lagosfinancial.com.au/terms-of-use</loc></url>
 </urlset>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { services } from '../../data/content'
 import { PlusIcon } from '../icons/Icons'
 
@@ -10,18 +11,18 @@ export function ServicesSection() {
             <span className="text-xsm font-bold uppercase">Our Services</span>
           </div>
           <h2 className="mb-4 font-neuliscursive text-[clamp(1.375rem,0.9806rem+1.6828vw,3rem)] leading-[1.1] font-bold text-[#064068]">
-            Your Home Loan Options
+            Finance Solutions for Every Goal
           </h2>
           <p className="text-[clamp(1rem,0.9393rem+0.2589vw,1.25rem)] font-normal text-[#4A5565]">
-            Whatever your property goal, we&apos;ll find the right loan.
+            With offices in Launceston and Bondi, Sydney — we&apos;re here to help you reach your goals.
           </p>
         </div>
 
         <div className="mb-4 flex flex-wrap items-center justify-center gap-4">
           {services.map((service) => (
-            <a
+            <Link
               key={service.title}
-              href="#services"
+              to={service.href}
               className={`service-card group relative block overflow-hidden rounded-2xl ${
                 service.wide
                   ? 'aspect-[622/400] w-[90%] xsm:w-[80%] sm:w-[50%] md:w-[49%] xl:w-[49.2%]'
@@ -66,7 +67,7 @@ export function ServicesSection() {
                   {service.description}
                 </p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

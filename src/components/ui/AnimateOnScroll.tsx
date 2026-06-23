@@ -3,6 +3,7 @@ import { type ElementType, type ReactNode, useEffect, useRef } from 'react'
 type AnimationType =
   | 'animate-on-scroll'
   | 'animate-fade-in'
+  | 'animate-fade-up'
   | 'animate-slide-left'
   | 'animate-slide-right'
   | 'animate-zoom-in'
@@ -10,7 +11,7 @@ type AnimationType =
 interface AnimateOnScrollProps {
   children: ReactNode
   animation?: AnimationType
-  delay?: 100 | 200 | 300
+  delay?: 100 | 200 | 300 | number
   className?: string
   as?: ElementType
 }
@@ -41,10 +42,11 @@ export function AnimateOnScroll({
     return () => observer.disconnect()
   }, [])
 
-  const delayClass = delay ? `animate-delay-${delay}` : ''
+  const delayClass = delay && [100, 200, 300].includes(delay) ? `animate-delay-${delay}` : ''
+  const style = delay && ![100, 200, 300].includes(delay) ? { transitionDelay: `${delay}ms` } : undefined
 
   return (
-    <Tag ref={ref} className={`${animation} ${delayClass} ${className}`.trim()}>
+    <Tag ref={ref} className={`${animation} ${delayClass} ${className}`.trim()} style={style}>
       {children}
     </Tag>
   )

@@ -16,17 +16,17 @@ export function ChallengesSection() {
             </div>
 
             <h2 className="mb-1 font-neulis text-[clamp(1.375rem,0.8441rem+2.2654vw,3.5625rem)] leading-[1.1] font-medium text-text">
-              Navigating the
+              Your Mortgage Broker
               <br />
-              Home Loan Maze
+              for Financial Freedom
             </h2>
             <p className="mb-7 font-neuliscursive text-[clamp(1.375rem,0.8441rem+2.2654vw,3.5625rem)] leading-[1.15] font-semibold text-accent">
-              Doesn&apos;t Have to Be Stressful
+              Work With Specialists Who Care
             </p>
 
             <p className="mb-9 max-w-[460px] text-[clamp(0.875rem,0.8295rem+0.1942vw,1.0625rem)] leading-relaxed font-medium text-text">
-              Finding the right home loan can feel overwhelming — too many lenders, confusing jargon, and no clear
-              guidance. Lagos Financial removes the complexity so you can focus on your property goals.
+              With financial services offices now available in both Launceston and Bondi, Sydney, we&apos;re here to help
+              you reach your goals with expert mortgage advice and access to 60+ lenders.
             </p>
 
             <ul className="flex flex-col gap-5">

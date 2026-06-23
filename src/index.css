@@ -198,6 +198,14 @@ section:not(#about-us) {
     animation: fadeIn 0.8s ease-out forwards;
   }
 
+  .animate-fade-up {
+    opacity: 0;
+  }
+
+  .animate-fade-up.in-view {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
   .animate-slide-left {
     opacity: 0;
   }
@@ -257,4 +265,216 @@ section:not(#about-us) {
 
 .reviews-bullet-active {
   background: var(--color-primary);
+}
+
+/* Dynamic UI motion */
+@keyframes motionFadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes motionFadeDownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes motionScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes motionDropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes motionMenuItemIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes motionPageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes motionPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.motion-page-enter {
+  animation: motionPageEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.motion-reveal {
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+  visibility: hidden;
+}
+
+.motion-reveal.motion-fade {
+  transform: none;
+}
+
+.motion-reveal.motion-fade-up {
+  transform: translateY(12px);
+}
+
+.motion-reveal.motion-fade-down {
+  transform: translateY(-12px);
+}
+
+.motion-reveal.motion-scale {
+  transform: scale(0.96);
+}
+
+.motion-reveal.motion-reveal-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+  visibility: visible;
+}
+
+.nav-dropdown-panel {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px) scale(0.98);
+  transform-origin: top left;
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0.22s ease;
+  visibility: hidden;
+}
+
+.nav-dropdown-panel.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+}
+
+.nav-dropdown-panel.is-open .nav-dropdown-item {
+  animation: motionMenuItemIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.nav-dropdown-panel.is-open .nav-dropdown-item:nth-child(1) {
+  animation-delay: 0.03s;
+}
+
+.nav-dropdown-panel.is-open .nav-dropdown-item:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.nav-dropdown-panel.is-open .nav-dropdown-item:nth-child(3) {
+  animation-delay: 0.09s;
+}
+
+.nav-dropdown-panel.is-open .nav-dropdown-item:nth-child(4) {
+  animation-delay: 0.12s;
+}
+
+.nav-dropdown-panel.is-open .nav-dropdown-item:nth-child(5) {
+  animation-delay: 0.15s;
+}
+
+.nav-dropdown-panel.is-open .nav-dropdown-item:nth-child(6) {
+  animation-delay: 0.18s;
+}
+
+.nav-dropdown-trigger-icon {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.nav-dropdown-trigger-icon.is-open {
+  transform: rotate(180deg);
+}
+
+.mobile-nav-panel {
+  transition:
+    max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.mobile-nav-panel.is-open {
+  opacity: 1;
+}
+
+.mobile-nav-panel.is-closed {
+  opacity: 0;
+}
+
+.mobile-nav-link {
+  animation: motionMenuItemIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.accordion-trigger:hover .accordion-icon {
+  background-color: rgb(255 163 124 / 0.3);
+}
+
+.form-submitting {
+  animation: motionPulse 1s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-page-enter,
+  .nav-dropdown-panel.is-open .nav-dropdown-item,
+  .mobile-nav-link,
+  .form-submitting {
+    animation: none;
+  }
+
+  .motion-reveal,
+  .nav-dropdown-panel,
+  .mobile-nav-panel,
+  .accordion-icon {
+    transition: none;
+  }
 }

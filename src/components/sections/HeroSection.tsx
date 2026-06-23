@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { heroCards } from '../../data/content'
 import { AnimateOnScroll } from '../ui/AnimateOnScroll'
 
@@ -68,7 +69,7 @@ const cardIcons = [BuyHomeIcon, PreApprovalIcon, RefinanceIcon, EquityIcon]
 
 function handleCardClick(card: (typeof heroCards)[number]) {
   if (card.action === 'equity') {
-    window.location.hash = 'contact'
+    window.location.href = '/contact'
     return
   }
   const script = document.createElement('script')
@@ -87,14 +88,14 @@ export function HeroSection() {
             <AnimateOnScroll animation="animate-slide-left">
               <div className="mb-6 inline-flex items-center rounded-[4px] bg-secondary px-4 py-1.5">
                 <span className="text-sm font-medium tracking-[1px] text-white uppercase">
-                  Australian Mortgage Specialists
+                  Why Choose Lagos Financial — 60+ Lenders
                 </span>
               </div>
             </AnimateOnScroll>
 
             <AnimateOnScroll animation="animate-slide-left" delay={100}>
               <h1 className="mb-3 font-neulis text-[clamp(2.375rem,1.9806rem+1.6828vw,4rem)] leading-[1.1] font-medium text-text">
-                Your Next Home Starts With the Right Loan.
+                Your Mortgage Broker for Financial Freedom
               </h1>
             </AnimateOnScroll>
 
@@ -106,25 +107,25 @@ export function HeroSection() {
 
             <AnimateOnScroll animation="animate-slide-left" delay={300}>
               <p className="mb-9 max-w-[420px] font-inter text-sm leading-relaxed font-medium text-text lg:text-base">
-                Delivering expert mortgage advice and outcome-focused solutions that help Australians secure the
-                right home loan for their goals.
+                With financial services offices now available in both Launceston and Bondi, Sydney, we&apos;re here to
+                help you reach your goals. Work with specialists who truly care.
               </p>
             </AnimateOnScroll>
 
             <AnimateOnScroll animation="animate-slide-left">
               <div className="flex flex-wrap items-center gap-3">
-                <a
-                  href="#contact"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white transition-opacity hover:opacity-85"
                 >
-                  Let&apos;s Talk
-                </a>
-                <a
-                  href="#how-it-works"
+                  Book a Complimentary Assessment
+                </Link>
+                <Link
+                  to="/about-us"
                   className="inline-flex items-center justify-center rounded-full border border-solid border-primary px-7 py-3.5 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary hover:text-white"
                 >
                   Learn More
-                </a>
+                </Link>
               </div>
             </AnimateOnScroll>
           </div>

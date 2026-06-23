@@ -28,9 +28,7 @@ export function TestimonialsSection() {
           <span className="text-sm font-semibold tracking-[0.15em] uppercase">Our Client&apos;s</span>
         </div>
         <h2 className="font-neulis text-[28px] leading-[1.1] font-medium text-text sm:text-[38px] lg:text-[48px]">
-          Hear it from
-          <br />
-          <span className="font-neuliscursive">Happy Home Owners</span>
+          What Our Clients Say
         </h2>
       </div>
 

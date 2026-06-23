@@ -1,41 +1,30 @@
-import { Preloader } from './components/layout/Preloader'
-import { Header } from './components/layout/Header'
-import { Footer } from './components/layout/Footer'
-import { Seo } from './components/seo/Seo'
-import { HeroSection } from './components/sections/HeroSection'
-import { LendersSection } from './components/sections/LendersSection'
-import { ChallengesSection } from './components/sections/ChallengesSection'
-import { ServicesSection } from './components/sections/ServicesSection'
-import { ApproachSection } from './components/sections/ApproachSection'
-import { ExclusiveSection } from './components/sections/ExclusiveSection'
-import { LoanTypesSection } from './components/sections/LoanTypesSection'
-import { TestimonialsSection } from './components/sections/TestimonialsSection'
-import { ContactFormSection } from './components/sections/ContactFormSection'
-import { CtaSection } from './components/sections/CtaSection'
-import { useScrollAnimations } from './hooks/useScrollAnimations'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { AppLayout } from './components/layout/AppLayout'
+import { HomePage } from './pages/HomePage'
+import { ContentPage } from './pages/ContentPage'
+import { ContactPage } from './pages/ContactPage'
+import { FaqPage } from './pages/FaqPage'
+import { BlogPage } from './pages/BlogPage'
+import { PodcastPage } from './pages/PodcastPage'
+import { pages } from './data/pages'
 
 function App() {
-  useScrollAnimations()
-
   return (
-    <>
-      <Seo />
-      <Preloader />
-      <Header />
-      <main>
-        <HeroSection />
-        <LendersSection />
-        <ChallengesSection />
-        <ServicesSection />
-        <ApproachSection />
-        <ExclusiveSection />
-        <LoanTypesSection />
-        <TestimonialsSection />
-        <ContactFormSection />
-        <CtaSection />
-      </main>
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="frequently-asked-questions" element={<FaqPage />} />
+          <Route path="blog" element={<BlogPage />} />
+          <Route path="podcast" element={<PodcastPage />} />
+          {Object.keys(pages).map((pageKey) => {
+            const path = pageKey.replace(/^\//, '')
+            return <Route key={pageKey} path={path} element={<ContentPage pageKey={pageKey} />} />
+          })}
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { AnimateOnScroll } from '../ui/AnimateOnScroll'
 
 export function CtaSection() {
@@ -6,26 +7,26 @@ export function CtaSection() {
       <div className="container">
         <AnimateOnScroll className="flex flex-col items-center gap-7 text-center">
           <div className="inline-flex items-center rounded-md bg-accent px-5 py-1.5 text-primary">
-            <span className="text-xs font-bold tracking-[0.18em] uppercase">Ready To Elevate?</span>
+            <span className="text-xs font-bold tracking-[0.18em] uppercase">Ready to take the next step?</span>
           </div>
 
           <h2 className="max-w-xl font-neulis text-[clamp(2rem,1.6511rem+1.4887vw,3.4375rem)] leading-[1.1] font-bold text-white">
-            Proceed Toward Your Next Achievement
+            Book a Complimentary Assessment
           </h2>
 
           <div className="mt-1 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center justify-center rounded-full bg-text px-8 py-3.5 text-sm font-semibold text-white transition-opacity hover:opacity-80"
             >
               Let&apos;s Talk
-            </a>
-            <a
-              href="#about-us"
+            </Link>
+            <Link
+              to="/about-us"
               className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-text transition-opacity hover:opacity-80"
             >
               Learn More
-            </a>
+            </Link>
           </div>
         </AnimateOnScroll>
       </div>

@@ -1,18 +1,28 @@
 import { useEffect } from 'react'
 import { offices } from '../../data/content'
 
-const SEO_TITLE = 'Lagos Financial | Australian Mortgage Specialists'
-const SEO_DESCRIPTION =
-  'Expert mortgage advice, refinancing support, pre-approvals, and borrowing power assessments to help Australians secure the right home loan.'
+const DEFAULT_TITLE = 'Australian Mortgage Broker — 60+ Lenders | Lagos Financial'
+const DEFAULT_DESCRIPTION =
+  'Your mortgage broker for financial freedom. Expert home loans, refinancing, investment property and commercial finance across Bondi and Launceston.'
 const SEO_IMAGE_PATH = '/assets/images/header-logo.svg'
 
-export function Seo() {
+type SeoProps = {
+  title?: string
+  description?: string
+  path?: string
+}
+
+export function Seo({
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
+  path = '/',
+}: SeoProps) {
   useEffect(() => {
     const origin = window.location.origin
-    const canonicalUrl = new URL('/', origin).toString()
+    const canonicalUrl = new URL(path, origin).toString()
     const ogImageUrl = new URL(SEO_IMAGE_PATH, origin).toString()
 
-    document.title = SEO_TITLE
+    document.title = title
 
     const setMeta = (
       selector: string,
@@ -39,29 +49,29 @@ export function Seo() {
       element.href = href
     }
 
-    setMeta('meta[name="description"]', 'name', 'description', SEO_DESCRIPTION)
+    setMeta('meta[name="description"]', 'name', 'description', description)
     setMeta('meta[name="robots"]', 'name', 'robots', 'index, follow')
-    setMeta('meta[property="og:title"]', 'property', 'og:title', SEO_TITLE)
-    setMeta('meta[property="og:description"]', 'property', 'og:description', SEO_DESCRIPTION)
+    setMeta('meta[property="og:title"]', 'property', 'og:title', title)
+    setMeta('meta[property="og:description"]', 'property', 'og:description', description)
     setMeta('meta[property="og:url"]', 'property', 'og:url', canonicalUrl)
     setMeta('meta[property="og:image"]', 'property', 'og:image', ogImageUrl)
-    setMeta('meta[name="twitter:title"]', 'name', 'twitter:title', SEO_TITLE)
-    setMeta('meta[name="twitter:description"]', 'name', 'twitter:description', SEO_DESCRIPTION)
+    setMeta('meta[name="twitter:title"]', 'name', 'twitter:title', title)
+    setMeta('meta[name="twitter:description"]', 'name', 'twitter:description', description)
     setMeta('meta[name="twitter:image"]', 'name', 'twitter:image', ogImageUrl)
     setLink('canonical', canonicalUrl)
 
     const structuredData = {
       '@context': 'https://schema.org',
       '@type': 'FinancialService',
-      '@id': canonicalUrl,
+      '@id': new URL('/', origin).toString(),
       name: 'Lagos Financial',
-      url: canonicalUrl,
+      url: new URL('/', origin).toString(),
       image: ogImageUrl,
-      description: SEO_DESCRIPTION,
+      description: DEFAULT_DESCRIPTION,
       email: 'customer@lagosfinancial.com.au',
       areaServed: 'Australia',
-      slogan: 'Australian Mortgage Specialists',
-      telephone: '+61483969782',
+      slogan: 'Your Mortgage Broker for Financial Freedom',
+      telephone: '+61468010679',
       contactPoint: offices.map((office) => ({
         '@type': 'ContactPoint',
         contactType: office.name,
@@ -78,31 +88,6 @@ export function Seo() {
           addressCountry: 'AU',
         },
       })),
-      knowsAbout: [
-        'Home loans',
-        'Refinancing',
-        'Pre-approval',
-        'First home buyer loans',
-        'Investment property loans',
-        'Borrowing power assessments',
-      ],
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Mortgage Services',
-        itemListElement: [
-          'First Home Buyer Loans',
-          'Home Loans',
-          'Refinancing',
-          'Investment Property Loans',
-          'Borrowing Power Assessment',
-        ].map((name) => ({
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name,
-          },
-        })),
-      },
     }
 
     let script = document.head.querySelector<HTMLScriptElement>(
@@ -115,7 +100,7 @@ export function Seo() {
       document.head.appendChild(script)
     }
     script.textContent = JSON.stringify(structuredData)
-  }, [])
+  }, [title, description, path])
 
   return null
 }

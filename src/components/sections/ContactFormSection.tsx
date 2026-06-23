@@ -55,7 +55,7 @@ export function ContactFormSection() {
     }`
 
   return (
-    <section className="section-form py-16 lg:py-24" id="contact">
+    <section className="section-form py-16 lg:py-24" id="contact-form">
       <div className="mx-auto w-full max-w-2xl px-[var(--container-padding)]">
         <AnimateOnScroll animation="animate-on-scroll">
           <div className="mb-10 text-center lg:mb-12">
@@ -73,12 +73,12 @@ export function ContactFormSection() {
           </div>
 
           {submitted ? (
-            <div className="rounded-2xl bg-white p-8 text-center shadow-[0_2px_16px_rgba(0,0,0,0.06)]">
+            <div className="motion-page-enter rounded-2xl bg-white p-8 text-center shadow-[0_2px_16px_rgba(0,0,0,0.06)]">
               <p className="mb-2 font-neulis text-xl font-semibold text-primary">Thank you!</p>
               <p className="text-text">A mortgage expert will contact you shortly.</p>
             </div>
           ) : (
-            <form className="flex flex-col gap-5" noValidate onSubmit={handleSubmit}>
+            <form className="motion-page-enter flex flex-col gap-5" noValidate onSubmit={handleSubmit}>
               <input type="text" name="honeypot" defaultValue="" className="hidden" tabIndex={-1} autoComplete="off" />
 
               <div className="flex flex-col gap-1.5">
@@ -94,7 +94,9 @@ export function ContactFormSection() {
                   className={inputClass('full_name')}
                   onChange={() => setErrors((prev) => ({ ...prev, full_name: undefined }))}
                 />
-                {errors.full_name && <span className="text-xs text-red-500">{errors.full_name}</span>}
+                {errors.full_name && (
+                  <span className="motion-page-enter text-xs text-red-500">{errors.full_name}</span>
+                )}
               </div>
 
               <div className="flex flex-col gap-1.5">
@@ -177,7 +179,9 @@ export function ContactFormSection() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="mt-2 w-full rounded-full bg-secondary py-4 text-sm font-bold tracking-widest text-white uppercase transition-colors hover:bg-[#e8795a] disabled:cursor-not-allowed disabled:opacity-60"
+                className={`mt-2 w-full rounded-full bg-secondary py-4 text-sm font-bold tracking-widest text-white uppercase transition-all duration-300 hover:scale-[1.01] hover:bg-[#e8795a] disabled:cursor-not-allowed disabled:opacity-60 ${
+                  submitting ? 'form-submitting' : ''
+                }`}
               >
                 {submitting ? 'Sending…' : 'Check My Borrowing Power'}
               </button>

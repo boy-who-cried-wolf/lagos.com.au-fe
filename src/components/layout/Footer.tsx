@@ -1,9 +1,34 @@
+import { Link } from 'react-router-dom'
 import { offices } from '../../data/content'
+import { footerColumns } from '../../data/navigation'
 
 export function Footer() {
   return (
     <footer className="site-footer mt-[-50px] rounded-t-[2rem] border-t border-primary/10 bg-bg pt-14 pb-8 lg:pt-16">
       <div className="container">
+        <div className="mb-10 grid gap-8 border-b border-primary/10 pb-10 sm:grid-cols-2 lg:grid-cols-4">
+          {footerColumns.map((column) => (
+            <div key={column.title}>
+              <h3 className="mb-4 text-sm font-semibold text-text lg:text-base">{column.title}</h3>
+              <ul className="flex flex-col gap-2">
+                {column.links.map((link) => (
+                  <li key={link.label}>
+                    {link.href.startsWith('tel:') ? (
+                      <a href={link.href} className="text-sm text-text/70 transition-colors hover:text-primary">
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link to={link.href} className="text-sm text-text/70 transition-colors hover:text-primary">
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
         <div className="flex flex-col gap-10 border-b border-primary/10 pb-10 md:flex-row lg:gap-8">
           <div className="flex flex-col gap-2 md:w-[40%]">
             <span className="text-xs font-semibold text-text md:text-sm lg:text-base">Email Us</span>
@@ -30,15 +55,6 @@ export function Footer() {
               Ready to take the next step in your financial journey?
             </p>
           </div>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-4 border-b border-primary/10 py-6">
-          <a href="#" className="text-sm text-text transition-colors hover:text-primary">
-            Privacy Policy
-          </a>
-          <a href="#" className="text-sm text-text transition-colors hover:text-primary">
-            Terms of Use
-          </a>
         </div>
 
         <div className="flex flex-col items-center gap-6 pt-10 pb-2 sm:flex-row sm:items-end">
