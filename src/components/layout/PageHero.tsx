@@ -61,10 +61,26 @@ export function PageHero({
   }
 
   return (
-    <section className="section-page-hero overflow-hidden pt-28 pb-0 lg:pt-36">
+    <section className="section-page-hero page-hero-gradient-bg overflow-hidden pt-28 pb-0 lg:pt-36">
       <div className="container">
-        <div className="flex flex-col items-center gap-10 pb-14 md:flex-row lg:gap-16 lg:pb-20">
-          <div className="w-full shrink-0 md:w-[52%]">
+        <AnimateOnScroll animation="animate-fade-in">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex flex-wrap items-center gap-2 font-inter text-xs font-medium tracking-wide text-text/45 uppercase">
+              <li>
+                <Link to="/" className="transition-colors hover:text-primary">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-text/25">
+                /
+              </li>
+              <li className="text-primary">{eyebrow ?? heading}</li>
+            </ol>
+          </nav>
+        </AnimateOnScroll>
+
+        <div className="flex flex-col gap-10 pb-14 lg:flex-row lg:items-center lg:gap-16 lg:pb-20">
+          <div className="w-full lg:w-[55%]">
             {eyebrow ? (
               <AnimateOnScroll animation="animate-slide-left">
                 <div className="mb-6 inline-flex items-center rounded-[4px] bg-secondary px-4 py-1.5">
@@ -74,14 +90,14 @@ export function PageHero({
             ) : null}
 
             <AnimateOnScroll animation="animate-slide-left" delay={100}>
-              <h1 className="mb-3 font-neulis text-[clamp(2rem,1.6rem+1.8vw,3.25rem)] leading-[1.1] font-medium text-text">
+              <h1 className="mb-3 font-neulis text-[clamp(2rem,1.5rem+2.2vw,3.25rem)] leading-[1.1] font-medium text-text">
                 {heading}
               </h1>
             </AnimateOnScroll>
 
             {accentLine ? (
               <AnimateOnScroll animation="animate-slide-left" delay={200}>
-                <p className="mb-6 font-neuliscursive text-[clamp(1.75rem,1.4rem+1.2vw,2.75rem)] leading-[1.1] font-bold text-accent">
+                <p className="mb-7 font-neuliscursive text-[clamp(1.5rem,1.1rem+1.6vw,2.5rem)] leading-[1.1] font-bold text-accent">
                   {accentLine}
                 </p>
               </AnimateOnScroll>
@@ -101,31 +117,38 @@ export function PageHero({
                 {renderCta(secondaryCtaHref, secondaryCtaLabel)}
               </div>
             </AnimateOnScroll>
+
+            <AnimateOnScroll animation="animate-fade-in" delay={400}>
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-secondary/20 pt-6">
+                <span className="font-inter text-xs font-medium tracking-wide text-text/50 uppercase">
+                  60+ Lenders
+                </span>
+                <span className="hidden h-3 w-px bg-secondary/25 sm:block" aria-hidden="true" />
+                <span className="font-inter text-xs font-medium tracking-wide text-text/50 uppercase">
+                  Bondi & Launceston
+                </span>
+              </div>
+            </AnimateOnScroll>
           </div>
 
-          <AnimateOnScroll animation="animate-slide-right" className="w-full md:flex-1">
-            <div className="relative mx-auto max-w-md overflow-hidden rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.12)] lg:mx-0 lg:max-w-none">
-              <img
-                src={heroImage}
-                alt={alt}
-                className="aspect-[4/3] w-full object-cover"
-                loading="eager"
+          <AnimateOnScroll animation="animate-slide-right" className="w-full lg:w-[45%]">
+            <div className="relative mx-auto max-w-md lg:mx-0 lg:max-w-none">
+              <div
+                className="absolute -top-3 -right-3 h-full w-full rounded-2xl bg-secondary/30 lg:-top-4 lg:-right-4"
+                aria-hidden="true"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_50%,rgba(35,57,91,0.35)_100%)]" />
+              <div className="relative overflow-hidden rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.12)]">
+                <img
+                  src={heroImage}
+                  alt={alt}
+                  className="aspect-[5/4] w-full object-cover"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_50%,rgba(255,163,124,0.18)_100%)]" />
+              </div>
             </div>
           </AnimateOnScroll>
         </div>
-      </div>
-
-      <div className="w-[150%] sm:w-[120%] md:w-full">
-        <img
-          src="/assets/images/header-border-img.png"
-          alt=""
-          className="block w-full object-cover object-top"
-          loading="lazy"
-          width={3840}
-          height={430}
-        />
       </div>
     </section>
   )

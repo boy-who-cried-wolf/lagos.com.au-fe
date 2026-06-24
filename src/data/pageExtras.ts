@@ -105,10 +105,3 @@ export const defaultRelatedLinks = [
   { label: 'Refinance Your Home', href: '/refinance-your-home' },
   { label: 'Book a Consultation', href: '/contact' },
 ]
-
-export const blogPostImages: Record<string, string> = {
-  'home-loan-preparation-guide': '/assets/images/services/service_1.png',
-  'borrowing-power': '/assets/images/services/service_2.png',
-  'negative-gearing-guide': '/assets/images/services/service_4.png',
-  'refinancing-strategies': '/assets/images/services/service_3.png',
-}

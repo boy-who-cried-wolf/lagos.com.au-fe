@@ -5,7 +5,6 @@ import { PageHero } from '../components/layout/PageHero'
 import { faqItems } from '../data/pages'
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll'
 import { AccordionItem } from '../components/ui/AccordionItem'
-import { LendersSection } from '../components/sections/LendersSection'
 import { CtaSection } from '../components/sections/CtaSection'
 
 export function FaqPage() {
@@ -27,7 +26,6 @@ export function FaqPage() {
         secondaryCtaLabel="Contact Us"
         secondaryCtaHref="/contact"
       />
-      <LendersSection />
 
       <section className="py-16 lg:py-24">
         <div className="container">

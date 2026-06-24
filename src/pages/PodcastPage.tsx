@@ -3,7 +3,6 @@ import { Seo } from '../components/seo/Seo'
 import { PageHero } from '../components/layout/PageHero'
 import { podcastContent } from '../data/content'
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll'
-import { LendersSection } from '../components/sections/LendersSection'
 import { CtaSection } from '../components/sections/CtaSection'
 
 const podcastBlocks = [
@@ -41,7 +40,6 @@ export function PodcastPage() {
         secondaryCtaLabel="Episode Show Notes"
         secondaryCtaHref="https://lagosfinancial.com.au/podcast/"
       />
-      <LendersSection />
 
       <section className="py-16 lg:py-24">
         <div className="container">

@@ -8,7 +8,6 @@ import { Seo } from '../components/seo/Seo'
 import { PageHero } from '../components/layout/PageHero'
 import { ContentSections } from '../components/layout/ContentSections'
 import { RelatedLinksSection } from '../components/layout/RelatedLinksSection'
-import { LendersSection } from '../components/sections/LendersSection'
 import { CtaSection } from '../components/sections/CtaSection'
 
 type ContentPageProps = {
@@ -30,7 +29,6 @@ export function ContentPage({ pageKey }: ContentPageProps) {
 
   const isLegal = legalPages.has(pageKey)
   const relatedLinks = relatedLinksByPath[pageKey] ?? (isLegal ? [] : defaultRelatedLinks)
-  const showLenders = !isLegal
 
   return (
     <>
@@ -45,7 +43,6 @@ export function ContentPage({ pageKey }: ContentPageProps) {
         secondaryCtaLabel={isLegal ? 'Contact Us' : 'All Services'}
         secondaryCtaHref={isLegal ? '/contact' : '/finance'}
       />
-      {showLenders ? <LendersSection /> : null}
       <ContentSections
         sections={page.sections}
         eyebrow={page.eyebrow}

@@ -332,62 +332,6 @@ export const pages: Record<string, PageMeta> = {
       },
     ],
   },
-  '/home-loan-preparation-guide': {
-    path: '/home-loan-preparation-guide',
-    title: 'Home Loan Preparation Guide - Lagos Financial',
-    description: 'Prepare documents, credit history, and savings before applying for a home loan in Australia.',
-    eyebrow: 'Blog',
-    heading: 'Home Loan Preparation Guide',
-    sections: [
-      {
-        title: 'Get Loan-Ready',
-        content:
-          'Gather income evidence, savings statements, identification, and understand your credit file before speaking with a broker.',
-      },
-    ],
-  },
-  '/borrowing-power': {
-    path: '/borrowing-power',
-    title: 'Understanding Your Borrowing Power - Lagos Financial',
-    description: 'How lenders assess borrowing capacity and steps to improve your borrowing power.',
-    eyebrow: 'Blog',
-    heading: 'Understanding Your Borrowing Power',
-    sections: [
-      {
-        title: 'What Lenders Look For',
-        content:
-          'Income, expenses, existing debts, credit history, and dependants all affect how much you can borrow. We model scenarios across multiple lenders.',
-      },
-    ],
-  },
-  '/negative-gearing-guide': {
-    path: '/negative-gearing-guide',
-    title: 'Negative Gearing Guide - Lagos Financial',
-    description: 'A practical overview of negative gearing for residential property investors in Australia.',
-    eyebrow: 'Blog',
-    heading: 'Negative Gearing Guide',
-    sections: [
-      {
-        title: 'Investment Property Tax Strategy',
-        content:
-          'When rental income is less than loan interest and expenses, the shortfall may be tax deductible — structure matters for long-term portfolio growth.',
-      },
-    ],
-  },
-  '/refinancing-strategies': {
-    path: '/refinancing-strategies',
-    title: 'Refinancing Strategies - Lagos Financial',
-    description: 'When to refinance, what to watch for, and how to maximise savings on your home loan.',
-    eyebrow: 'Blog',
-    heading: 'Refinancing Strategies',
-    sections: [
-      {
-        title: 'Smart Refinance Moves',
-        content:
-          'Compare break costs, loyalty discounts, and offset features. Timing your refinance around fixed-rate expiry can unlock significant savings.',
-      },
-    ],
-  },
   '/terms-of-use': {
     path: '/terms-of-use',
     title: 'Terms of Use - Lagos Financial',
@@ -429,32 +373,5 @@ export const faqItems = [
     question: 'Can you help with commercial or SMSF loans?',
     answer:
       'Yes. We specialise in residential, commercial, construction, and SMSF property finance with access to lenders experienced in each area.',
-  },
-] as const
-
-export const blogPosts = [
-  {
-    slug: 'home-loan-preparation-guide',
-    title: 'Home Loan Preparation Guide',
-    excerpt: 'Everything you need to prepare before applying for a home loan in Australia.',
-    date: '2026-03-27',
-  },
-  {
-    slug: 'borrowing-power',
-    title: 'Understanding Your Borrowing Power',
-    excerpt: 'How lenders calculate borrowing capacity and what you can do to improve it.',
-    date: '2026-03-27',
-  },
-  {
-    slug: 'negative-gearing-guide',
-    title: 'Negative Gearing Guide',
-    excerpt: 'A practical overview of negative gearing for residential property investors.',
-    date: '2026-04-05',
-  },
-  {
-    slug: 'refinancing-strategies',
-    title: 'Refinancing Strategies',
-    excerpt: 'When to refinance, what to watch for, and how to maximise savings.',
-    date: '2026-04-05',
   },
 ] as const

@@ -32,9 +32,9 @@ export function QuoteIcon() {
   )
 }
 
-export function PlusIcon() {
+export function PlusIcon({ className = 'h-4 w-4 text-white' }: { className?: string }) {
   return (
-    <svg className="w-4 h-4 text-white" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M8 2V14M2 8H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
     </svg>
   )
