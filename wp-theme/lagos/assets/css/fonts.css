@@ -1,0 +1,60 @@
+/**
+ * Lagos Financial — self-hosted fonts
+ * Synced via: npm run sync:fonts
+ */
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Inter/inter-v20-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Inter/inter-v20-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/Inter/inter-v20-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Inter/inter-v20-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Neulis;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Neulis/Neulis-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Neulis;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Neulis/NeulisAlt-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Neulis Cursive";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Neulis/neulis-cursive-regular.otf") format("opentype");
+}

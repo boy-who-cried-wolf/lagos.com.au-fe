@@ -30,6 +30,11 @@ export function TestimonialsSection() {
         <h2 className="font-neulis text-[28px] leading-[1.1] font-medium text-text sm:text-[38px] lg:text-[48px]">
           What Our Clients Say
         </h2>
+        <p className="mx-auto mt-4 max-w-3xl px-4 text-sm leading-relaxed text-text/75 lg:text-base">
+          We&apos;ve built long-lasting relationships with our clients in Bondi and surrounding Sydney suburbs,
+          providing personalised service and expert advice that makes a real difference. Here&apos;s what some of our
+          clients have to say about their experience working with Lagos Financial:
+        </p>
       </div>
 
       <div className="reviews-swiper overflow-hidden">

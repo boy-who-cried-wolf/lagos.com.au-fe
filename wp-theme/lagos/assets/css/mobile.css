@@ -1,0 +1,461 @@
+/**
+ * Mobile & tablet polish — complements main.css + home.css
+ * Breakpoints: max 479px (xs), max 767px (mobile), max 1023px (tablet)
+ */
+
+/* ── Global ───────────────────────────────────────────── */
+@media (max-width: 767px) {
+  section {
+    scroll-margin-top: 72px;
+  }
+
+  body.admin-bar section {
+    scroll-margin-top: 118px;
+  }
+
+  body.admin-bar .site-main:not(:has(> .page-hero:first-child)):not(:has(> .home-hero:first-child)) {
+    padding-top: calc(5.5rem + 46px);
+  }
+
+  .btn-primary,
+  .btn-outline,
+  .btn-secondary {
+    min-height: 2.75rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .page-hero__actions .btn-primary,
+  .page-hero__actions .btn-outline,
+  .home-hero__actions .btn-primary,
+  .home-hero__actions .btn-outline {
+    flex: 1 1 calc(50% - 0.375rem);
+    min-width: 9.5rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 479px) {
+  .page-hero__actions .btn-primary,
+  .page-hero__actions .btn-outline,
+  .home-hero__actions .btn-primary,
+  .home-hero__actions .btn-outline {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .related-links__btn,
+  .section-cta__btn {
+    width: 100%;
+    max-width: 20rem;
+  }
+}
+
+/* ── Header ───────────────────────────────────────────── */
+@media (max-width: 479px) {
+  .site-header {
+    padding: 0.75rem 0.75rem 0.375rem;
+  }
+
+  .site-header__shell {
+    padding: 0.625rem 0.875rem;
+  }
+
+  .site-header__logo img {
+    height: 2rem;
+  }
+
+  .site-header__nav-row {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header__mobile-link,
+  .site-header__mobile-group-btn {
+    font-size: 0.9375rem;
+    padding: 0.625rem 0.75rem;
+  }
+
+  .site-header__mobile-cta {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ── Page hero (all inner pages) ──────────────────────── */
+@media (max-width: 767px) {
+  .section-page-hero.page-hero,
+  .page-hero {
+    padding-top: 6rem;
+  }
+
+  .page-hero__breadcrumb {
+    margin-bottom: 1.25rem;
+  }
+
+  .page-hero__breadcrumb ol {
+    font-size: 0.6875rem;
+    gap: 0.375rem;
+  }
+
+  .page-hero__grid {
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .page-hero__eyebrow {
+    margin-bottom: 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .page-hero__trust {
+    gap: 0.75rem 1.25rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+  }
+
+  .page-hero__media {
+    max-width: 100%;
+  }
+
+  .page-hero__media-shadow {
+    top: -0.5rem;
+    right: -0.5rem;
+  }
+}
+
+/* ── Home hero ────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .home-hero {
+    padding-top: 6rem;
+  }
+
+  .home-hero__grid {
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .home-hero__title,
+  .home-hero__accent {
+    font-size: clamp(1.875rem, 1.5rem + 1.5vw, 2.375rem);
+  }
+
+  .home-hero__cards {
+    max-width: 100%;
+    gap: 0.625rem;
+  }
+
+  .home-hero__card {
+    padding: 1rem;
+  }
+}
+
+/* ── Content sections ─────────────────────────────────── */
+@media (max-width: 767px) {
+  .content-sections,
+  .section-faq,
+  .section-podcast,
+  .section-blog,
+  .section-blog-article,
+  .section-offices,
+  .related-links {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .content-sections__grid,
+  .section-faq__grid {
+    gap: 2rem;
+  }
+
+  .content-sections__card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .content-sections__card-number {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .related-links__card {
+    padding: 2rem 1.25rem;
+    border-radius: 1.5rem;
+  }
+
+  .related-links__header {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ── CTA section ──────────────────────────────────────── */
+@media (max-width: 767px) {
+  .section-cta {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .section-cta__inner {
+    gap: 1.25rem;
+  }
+
+  .section-cta__title {
+    font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.25rem);
+  }
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .site-footer {
+    margin-top: -2rem;
+    padding: 2.5rem 0 1.5rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+
+  .site-footer__columns {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .site-footer__contact-row {
+    gap: 1.75rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .site-footer__tagline {
+    max-width: none;
+  }
+
+  .site-footer__logo-wrap {
+    padding-top: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .site-footer__contact-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .site-footer__email-block,
+  .site-footer__office {
+    width: 100%;
+  }
+
+  .site-footer__tagline {
+    max-width: none;
+  }
+}
+
+/* ── FAQ ──────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .accordion-trigger {
+    padding: 0.875rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .accordion-trigger__title {
+    font-size: 0.9375rem;
+    line-height: 1.35;
+  }
+
+  .accordion-panel {
+    padding: 0.875rem 1rem;
+  }
+
+  .section-faq-cta__card {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+/* ── Podcast ──────────────────────────────────────────── */
+@media (max-width: 479px) {
+  .section-podcast__block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .section-podcast-cta__card,
+  .home-podcast__card {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+/* ── Blog ───────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .section-blog__header {
+    margin-bottom: 2rem;
+  }
+
+  .section-blog-article__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-blog-article__back {
+    font-size: 0.875rem;
+  }
+
+  .blog-not-found {
+    padding: 4rem 0;
+  }
+
+  .blog-card__body {
+    padding: 1.25rem;
+  }
+
+  .blog-article h2 {
+    margin-top: 2rem;
+  }
+}
+
+.blog-article__table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.25rem 0;
+  border-radius: 0.75rem;
+}
+
+@media (max-width: 767px) {
+  .blog-article table {
+    display: block;
+    min-width: 32rem;
+    font-size: 0.8125rem;
+  }
+
+  .blog-article th,
+  .blog-article td {
+    padding: 0.625rem 0.75rem;
+  }
+}
+
+/* ── Office cards ───────────────────────────────────── */
+@media (max-width: 767px) {
+  .section-offices__card {
+    padding: 1.5rem;
+  }
+}
+
+/* ── Homepage sections ──────────────────────────────── */
+@media (max-width: 767px) {
+  .home-challenges,
+  .home-services,
+  .home-approach,
+  .home-exclusive,
+  .home-loantypes,
+  .home-lenders,
+  .home-podcast,
+  .home-testimonials,
+  .home-form {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .home-challenges__media {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .challenges__badge {
+    white-space: normal;
+    max-width: 9rem;
+    text-align: center;
+    line-height: 1.3;
+    font-size: 0.5625rem;
+    padding: 0.625rem 0.75rem;
+  }
+
+  .challenges__badge--1 {
+    top: 0.5rem;
+    right: 0.25rem;
+  }
+
+  .challenges__badge--2 {
+    top: 12%;
+    right: 0;
+  }
+
+  .challenges__badge--3 {
+    top: 28%;
+    right: 0.25rem;
+  }
+
+  .home-loantypes__card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 1.5rem;
+  }
+
+  .home-loantypes__pills {
+    gap: 0.5rem;
+  }
+
+  .home-loantypes__pill {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.875rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .home-exclusive__card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .home-services__card {
+    width: 100% !important;
+  }
+}
+
+/* ── Contact form ───────────────────────────────────── */
+@media (max-width: 767px) {
+  .home-form__inner {
+    padding: 0;
+  }
+
+  .home-form__header {
+    margin-bottom: 2rem;
+  }
+
+  .home-form__title-accent,
+  .home-form__title-primary {
+    font-size: 1.75rem;
+  }
+
+  .home-form__field input,
+  .home-form__field select {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .home-form__submit {
+    font-size: 0.9375rem;
+    padding: 0.875rem 1rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .home-form__title-accent,
+  .home-form__title-primary {
+    font-size: 2.375rem;
+  }
+}
+
+/* ── Testimonials (home) ────────────────────────────── */
+@media (max-width: 767px) {
+  .reviews-card {
+    min-height: auto;
+  }
+
+  .reviews-card__content {
+    padding: 1.25rem;
+  }
+}

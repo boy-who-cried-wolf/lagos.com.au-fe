@@ -2,26 +2,18 @@ import { Link } from 'react-router-dom'
 import { Seo } from '../components/seo/Seo'
 import { PageHero } from '../components/layout/PageHero'
 import { podcastContent } from '../data/content'
+import { podcastEpisodes } from '../data/podcasts'
 import { AnimateOnScroll } from '../components/ui/AnimateOnScroll'
+import { PlusIcon } from '../components/icons/Icons'
 import { CtaSection } from '../components/sections/CtaSection'
 
-const podcastBlocks = [
-  {
-    title: 'About the Podcast',
-    content:
-      "Welcome to the Debt to Financial Freedom Podcast. I'm your host Victor Lagos and the founder of Lagos Financial.",
-  },
-  {
-    title: 'Why I Started It',
-    content:
-      "I've been in the finance and lending industry for 17 years and I've personally made financial mistakes and learned from them. I started this podcast to share stories and lessons on my own journey.",
-  },
-  {
-    title: 'Our Mission',
-    content:
-      'My goal is to share raw, honest, transparent, and helpful stories that you can relate to — and inspire you to take control of your finances and only have debt that brings you closer to financial freedom.',
-  },
-] as const
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('en-AU', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  })
+}
 
 export function PodcastPage() {
   return (
@@ -37,65 +29,62 @@ export function PodcastPage() {
         accentLine="Real Stories."
         subheading={podcastContent.description}
         pagePath="/podcast"
-        secondaryCtaLabel="Episode Show Notes"
-        secondaryCtaHref="https://lagosfinancial.com.au/podcast/"
+        secondaryCtaLabel="Contact Us"
+        secondaryCtaHref="/contact"
       />
 
       <section className="py-16 lg:py-24">
         <div className="container">
           <div className="mb-12 flex flex-col items-center text-center">
-            <div className="mb-5 inline-flex items-center rounded-md bg-primary px-5 py-1.5 text-white">
-              <span className="text-sm font-semibold tracking-[0.15em] uppercase">Hosted by Victor Lagos</span>
+            <div className="mb-5 inline-flex items-center rounded-[4px] bg-primary px-4 py-1.5">
+              <span className="text-sm font-medium tracking-[1px] text-white uppercase">Latest Episodes</span>
             </div>
-            <h2 className="font-neuliscursive text-[clamp(1.375rem,0.8441rem+2.2654vw,2.5rem)] font-medium text-accent">
-              Honest Stories. Real Lessons.
+            <h2 className="font-neuliscursive text-[clamp(1.375rem,0.9806rem+1.6828vw,2.5rem)] font-bold text-accent">
+              Debt to Financial Freedom
             </h2>
           </div>
 
-          <div className="mx-auto flex max-w-3xl flex-col gap-4">
-            {podcastBlocks.map((block, index) => (
-              <AnimateOnScroll key={block.title} animation="animate-fade-up" delay={index * 100}>
-                <article className="flex items-start gap-5 rounded-2xl bg-white p-6 shadow-[0_2px_16px_rgba(0,0,0,0.06)] lg:p-7">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-secondary">
-                    <span className="text-xl leading-none font-bold text-white">{index + 1}</span>
+          <div className="grid gap-5 md:grid-cols-2">
+            {podcastEpisodes.map((episode, index) => (
+              <AnimateOnScroll key={episode.slug} animation="animate-fade-up" delay={index * 80} className="h-full">
+                <Link
+                  to={`/podcast/${episode.slug}`}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-[0_2px_16px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)]"
+                >
+                  <div className="relative aspect-[16/9] shrink-0 overflow-hidden">
+                    <img
+                      src={episode.image}
+                      alt={episode.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.05)_0%,rgba(0,0,0,0.55)_100%)]" />
+                    <time className="absolute top-4 left-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-primary uppercase">
+                      {formatDate(episode.date)}
+                    </time>
                   </div>
-                  <div>
-                    <h3 className="mb-2 text-base font-bold text-primary lg:text-xl">{block.title}</h3>
-                    <p className="text-sm leading-relaxed text-text lg:text-base">{block.content}</p>
+
+                  <div className="flex flex-1 flex-col p-6 lg:p-7">
+                    <div className="mb-3 flex items-start justify-between gap-3">
+                      <h2 className="font-neulis text-lg font-bold text-primary lg:text-xl">{episode.title}</h2>
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-primary/20 transition-colors group-hover:border-primary group-hover:bg-primary">
+                        <PlusIcon className="h-3.5 w-3.5 text-primary group-hover:text-white" />
+                      </span>
+                    </div>
+                    <p className="mb-2 font-inter text-xs font-medium text-text/50">
+                      by {episode.author} · Podcast
+                    </p>
+                    <p className="mb-4 flex-1 font-inter text-sm leading-relaxed text-text/75 lg:text-base">
+                      {episode.excerpt}
+                    </p>
+                    <span className="text-sm font-semibold text-secondary transition-colors group-hover:text-primary">
+                      Read more →
+                    </span>
                   </div>
-                </article>
+                </Link>
               </AnimateOnScroll>
             ))}
           </div>
-
-          <AnimateOnScroll className="mt-10 text-center" delay={200}>
-            <a
-              href="https://lagosfinancial.com.au/podcast/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-secondary px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#d97a5a]"
-            >
-              Listen & Read Episode Show Notes
-            </a>
-          </AnimateOnScroll>
-        </div>
-      </section>
-
-      <section className="pb-8">
-        <div className="container">
-          <AnimateOnScroll className="mx-auto max-w-3xl">
-            <div className="flex h-full flex-col items-center gap-5 rounded-2xl bg-primary p-8 text-center lg:p-10">
-              <p className="max-w-2xl text-base leading-relaxed font-medium text-white lg:text-lg">
-                {podcastContent.description}
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-primary transition-opacity hover:opacity-85"
-              >
-                Book a Complimentary Assessment
-              </Link>
-            </div>
-          </AnimateOnScroll>
         </div>
       </section>
 

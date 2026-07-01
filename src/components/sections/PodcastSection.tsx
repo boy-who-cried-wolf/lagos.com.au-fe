@@ -19,14 +19,17 @@ export function PodcastSection() {
 
         <AnimateOnScroll className="mx-auto max-w-3xl">
           <div className="flex h-full flex-col items-center gap-5 rounded-2xl bg-primary p-8 text-center lg:p-10">
-            <p className="max-w-2xl text-base leading-relaxed font-medium text-white lg:text-lg">
-              {podcastContent.description}
-            </p>
+            <div className="max-w-2xl space-y-4 text-base leading-relaxed font-medium text-white lg:text-lg">
+              <p>{podcastContent.description}</p>
+              {podcastContent.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
             <Link
               to="/podcast"
               className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-primary transition-opacity hover:opacity-85"
             >
-              Episode Show Notes
+              Episode show notes
             </Link>
           </div>
         </AnimateOnScroll>

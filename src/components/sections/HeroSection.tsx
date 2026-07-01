@@ -94,18 +94,12 @@ export function HeroSection() {
             </AnimateOnScroll>
 
             <AnimateOnScroll animation="animate-slide-left" delay={100}>
-              <h1 className="mb-3 font-neulis text-[clamp(2.375rem,1.9806rem+1.6828vw,4rem)] leading-[1.1] font-medium text-text">
+              <h1 className="mb-7 font-neulis text-[clamp(2.375rem,1.9806rem+1.6828vw,4rem)] leading-[1.1] font-medium text-text">
                 Your Mortgage Broker for Financial Freedom
               </h1>
             </AnimateOnScroll>
 
             <AnimateOnScroll animation="animate-slide-left" delay={200}>
-              <p className="mb-7 font-neuliscursive text-[clamp(2.375rem,1.9806rem+1.6828vw,4rem)] leading-[1.1] font-bold text-accent">
-                Let&apos;s Find It.
-              </p>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll animation="animate-slide-left" delay={300}>
               <p className="mb-9 max-w-[420px] font-inter text-sm leading-relaxed font-medium text-text lg:text-base">
                 With financial services offices now available in both Launceston and Bondi, Sydney, we&apos;re here to
                 help you reach your goals. Work with specialists who truly care.

@@ -8,7 +8,14 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "sync:blogs": "node scripts/sync-blogs.mjs"
+    "sync:blogs": "node scripts/sync-blogs.mjs",
+    "sync:pages": "node scripts/sync-pages.mjs",
+    "sync:faq": "node scripts/sync-faq.mjs",
+    "sync:podcasts": "node scripts/sync-podcasts.mjs",
+    "sync:content": "node scripts/sync-pages.mjs && node scripts/sync-faq.mjs && node scripts/sync-blogs.mjs && node scripts/sync-podcasts.mjs",
+    "sync:fonts": "node scripts/fetch-fonts.mjs",
+    "sync:images": "node scripts/fetch-images.mjs",
+    "build:wp-theme": "node scripts/fetch-fonts.mjs && node scripts/fetch-images.mjs && node scripts/copy-vendor.mjs && node scripts/normalize-pages-json.mjs && node scripts/sync-pages-wp.mjs && node scripts/sync-faq-wp.mjs && node scripts/sync-page-content-css.mjs && node scripts/sync-blogs-wp.mjs && node scripts/sync-podcasts-wp.mjs && node scripts/build-wp-theme.mjs"
   },
   "dependencies": {
     "matter-js": "^0.20.0",

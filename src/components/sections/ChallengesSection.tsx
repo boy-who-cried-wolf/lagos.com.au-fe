@@ -31,10 +31,10 @@ export function ChallengesSection() {
 
             <ul className="flex flex-col gap-5">
               {painPoints.map((point) => (
-                <li key={point.strong} className="flex items-start gap-3">
+                <li key={point.text} className="flex items-start gap-3">
                   <CheckBadgeIcon />
                   <span className="text-[clamp(0.875rem,0.8447rem+0.1294vw,1rem)] leading-relaxed text-text">
-                    <strong className="font-medium">{point.strong}</strong>
+                    {point.strong ? <strong className="font-medium">{point.strong}</strong> : null}
                     {point.text}
                   </span>
                 </li>

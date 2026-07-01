@@ -3,20 +3,8 @@ import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 
 const BASE = 'https://lagosfinancial.com.au'
-const BLOG_SLUGS = [
-  'what-does-a-mortgage-broker-do-australia',
-  'australian-property-market-forecast-2026',
-  'buying-interstate-property-investment-australia',
-  'debt-consolidation-refinancing-guide',
-  'guarantor-home-loans-family-equity-explained',
-  'how-to-read-comparison-rate-home-loans',
-  'interest-only-vs-principal-and-interest-home-loans',
-  'bridging-finance-explained-australia',
-  'non-bank-lenders-vs-big-banks-australia',
-  'investment-property-tax-deductions-2026',
-  'best-interests-duty-mortgage-broker-explained',
-  'how-mortgage-broker-commissions-work-australia',
-]
+const BLOG_CATEGORY_ID = 13
+const DEFAULT_IMAGE = '/assets/images/services/service_4.png'
 
 function decodeHtml(text) {
   return text
@@ -24,56 +12,16 @@ function decodeHtml(text) {
     .replace(/&#8211;/g, '–')
     .replace(/&#8220;/g, '"')
     .replace(/&#8221;/g, '"')
+    .replace(/&#8230;/g, '…')
+    .replace(/&hellip;/g, '…')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
 }
 
-function parseMeta(html, property) {
-  const match = html.match(new RegExp(`<meta property="${property}" content="([^"]*)"`, 'i'))
-  return match ? decodeHtml(match[1]) : ''
-}
-
-function parseDate(html) {
-  const match = html.match(/<span class="published">([^<]+)<\/span>/i)
-  if (!match) return ''
-  const parsed = new Date(match[1].trim())
-  if (Number.isNaN(parsed.getTime())) return match[1].trim()
-  return parsed.toISOString().slice(0, 10)
-}
-
-function parseFeaturedImage(html) {
-  const ogImage = parseMeta(html, 'og:image')
-  if (ogImage) return ogImage
-
-  const lazy = html.match(/data-lazy-src="(https:\/\/lagosfinancial\.com\.au\/wp-content[^"]+)"/i)
-  if (lazy) return lazy[1]
-
-  const direct = html.match(/src="(https:\/\/lagosfinancial\.com\.au\/wp-content[^"]+)"/i)
-  return direct?.[1] ?? ''
-}
-
-function cleanTitle(title) {
-  return title.replace(/\s*\|\s*Lagos Financial.*$/i, '').trim()
-}
-
-function extractArticleHtml(html) {
-  const nested = html.match(/<div class="entry-content">\s*<article>([\s\S]*?)<\/article>/i)
-  if (nested) {
-    return cleanContent(nested[1])
-  }
-
-  const start = html.search(/<div class="entry-content">/i)
-  if (start === -1) return ''
-
-  const articleEnd = html.indexOf('</article>', start)
-  if (articleEnd === -1) return ''
-
-  const chunk = html.slice(start, articleEnd)
-  const inner = chunk.replace(/^<div class="entry-content">/i, '').replace(/<\/div>\s*$/i, '')
-
-  return cleanContent(inner)
+function stripTags(html) {
+  return decodeHtml(html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim())
 }
 
 function cleanContent(raw) {
@@ -82,7 +30,9 @@ function cleanContent(raw) {
   content = content.replace(/<noscript>[\s\S]*?<\/noscript>/gi, '')
   content = content.replace(/\ssrc="data:image[^"]*"/gi, '')
   content = content.replace(/data-lazy-src="/g, 'src="')
+  content = content.replace(/data-src="/g, 'src="')
   content = content.replace(/src="\/wp-content/g, 'src="https://lagosfinancial.com.au/wp-content')
+  content = content.replace(/\sdata-[a-z0-9-]+="[^"]*"/gi, '')
   content = content.replace(/\sclass="[^"]*"/gi, '')
   content = content.replace(/\sstyle="[^"]*"/gi, '')
   content = content.replace(/<hr\s*\/?>/gi, '')
@@ -104,37 +54,57 @@ function cleanContent(raw) {
   return content.trim()
 }
 
-async function fetchPost(slug) {
-  const url = `${BASE}/${slug}/`
+function mapPost(item) {
+  const image = item._embedded?.['wp:featuredmedia']?.[0]?.source_url || DEFAULT_IMAGE
+
+  return {
+    slug: item.slug,
+    title: stripTags(item.title?.rendered ?? ''),
+    excerpt: stripTags(item.excerpt?.rendered ?? ''),
+    date: (item.date ?? '').slice(0, 10),
+    image,
+    contentHtml: cleanContent(item.content?.rendered ?? ''),
+    author: 'Victor Lagos',
+  }
+}
+
+async function fetchAllPosts() {
+  const search = new URLSearchParams({
+    per_page: '100',
+    categories: String(BLOG_CATEGORY_ID),
+    _embed: '1',
+  })
+
+  const url = `${BASE}/wp-json/wp/v2/posts?${search}`
   const response = await fetch(url)
   if (!response.ok) {
-    throw new Error(`Failed to fetch ${url}: ${response.status}`)
+    throw new Error(`Failed to fetch blog posts: ${response.status}`)
   }
 
-  const html = await response.text()
-  const entryTitle = html.match(/<h1 class="entry-title">([\s\S]*?)<\/h1>/i)?.[1]
-  const ogTitle = parseMeta(html, 'og:title')
-  const title = cleanTitle(entryTitle ? decodeHtml(entryTitle.replace(/<[^>]+>/g, '')) : ogTitle || slug)
-  const excerpt = parseMeta(html, 'og:description')
-  const date = parseDate(html)
-  const image = parseFeaturedImage(html)
-  const contentHtml = extractArticleHtml(html)
+  const firstPage = await response.json()
+  const totalPages = Number(response.headers.get('x-wp-totalpages') ?? '1')
+  const posts = [...firstPage]
 
-  if (!contentHtml) {
-    throw new Error(`No article content found for ${slug}`)
+  for (let page = 2; page <= totalPages; page += 1) {
+    const pageSearch = new URLSearchParams({
+      per_page: '100',
+      categories: String(BLOG_CATEGORY_ID),
+      _embed: '1',
+      page: String(page),
+    })
+    const pageResponse = await fetch(`${BASE}/wp-json/wp/v2/posts?${pageSearch}`)
+    if (!pageResponse.ok) {
+      throw new Error(`Failed to fetch blog page ${page}: ${pageResponse.status}`)
+    }
+    posts.push(...(await pageResponse.json()))
   }
 
-  return { slug, title, excerpt, date, image, contentHtml }
+  return posts
 }
 
 async function main() {
-  const posts = []
-
-  for (const slug of BLOG_SLUGS) {
-    process.stdout.write(`Fetching ${slug}...\n`)
-    const post = await fetchPost(slug)
-    posts.push({ ...post, author: 'Victor Lagos' })
-  }
+  const items = await fetchAllPosts()
+  const posts = items.map(mapPost).sort((a, b) => b.date.localeCompare(a.date))
 
   const outPath = join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'data', 'blogs.json')
   writeFileSync(outPath, `${JSON.stringify({ posts }, null, 2)}\n`, 'utf8')

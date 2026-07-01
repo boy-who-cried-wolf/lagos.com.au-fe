@@ -14,9 +14,9 @@ export function ContactPage() {
       />
       <PageHero
         eyebrow="Contact"
-        heading="Speak To Us"
+        heading="Contact"
         accentLine="Let's Talk."
-        subheading="Ready to take the next step? Book a complimentary assessment or get in touch with our Bondi or Launceston team."
+        subheading="contact@lagosfinancial.com.au — Open 8.30am – 5.30pm Monday to Friday. Book a complimentary assessment or get in touch with our Bondi or Launceston team."
         ctaLabel="Book a Complimentary Assessment"
         ctaHref="#contact-form"
         pagePath="/contact"

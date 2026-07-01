@@ -1,0 +1,139 @@
+@keyframes lagos-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lagos-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lagos-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes lagos-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes lagos-zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes lagos-motion-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Desktop scroll reveals — matches src/index.css (lg breakpoint) */
+@media (min-width: 1024px) {
+  .animate-on-scroll,
+  .animate-fade-in,
+  .animate-fade-up,
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-zoom-in {
+    opacity: 0;
+  }
+
+  .animate-on-scroll.in-view,
+  .animate-fade-up.in-view {
+    animation: lagos-fade-in-up 0.8s ease-out forwards;
+    animation-delay: var(--aos-delay, 0ms);
+  }
+
+  .animate-fade-in.in-view {
+    animation: lagos-fade-in 0.8s ease-out forwards;
+    animation-delay: var(--aos-delay, 0ms);
+  }
+
+  .animate-slide-left.in-view {
+    animation: lagos-slide-in-left 0.8s ease-out forwards;
+    animation-delay: var(--aos-delay, 0ms);
+  }
+
+  .animate-slide-right.in-view {
+    animation: lagos-slide-in-right 0.8s ease-out forwards;
+    animation-delay: var(--aos-delay, 0ms);
+  }
+
+  .animate-zoom-in.in-view {
+    animation: lagos-zoom-in 0.8s ease-out forwards;
+    animation-delay: var(--aos-delay, 0ms);
+  }
+
+  .animate-delay-100.in-view {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200.in-view {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300.in-view {
+    animation-delay: 300ms;
+  }
+}
+
+.motion-page-enter {
+  animation: lagos-motion-page-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll,
+  .animate-fade-in,
+  .animate-fade-up,
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-zoom-in {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .motion-page-enter {
+    animation: none;
+  }
+}

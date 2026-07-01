@@ -1,0 +1,190 @@
+/* iframe#polite-slide-in-right-XQkBqDGMcrEjKc4rzPMg {
+margin-top: -100px;
+	background: #1A3657FF;
+}
+ */
+
+ #polite-slide-in-right-XQkBqDGMcrEjKc4rzPMg-div {
+	background: unset !important;
+	bottom: 100px !important;
+	right: -25px;
+}
+
+#polite-slide-in-right-XQkBqDGMcrEjKc4rzPMg-minimize-text {
+	margin-top: 100px !important;
+}
+#polite-slide-in-right-XQkBqDGMcrEjKc4rzPMg-minimize-icon {
+	position: absolute;
+    right: 40px;
+    top: 60px;
+}
+
+a.filter-button {
+    padding: 10px 10px;
+    margin: 5px;
+    border: 2px solid #6f87a3;
+}
+
+a.filter-button.active, a.filter-button:hover {
+    padding: 10px 10px;
+    margin: 5px;
+    background: #6f87a3;
+	  color: #fff !important;
+}
+#hero-image {
+	max-width: 100% !important;
+}
+
+@media(max-width: 600px) {
+	.custom-blog-filter {
+		display: flex;
+    flex-direction: column;
+	}
+	.custom-blog-filter a {
+		text-align: center;
+	}
+}
+
+iframe#polite-slide-in-right-XMd6TjxKvemlwWHsnQKE {
+    margin-top: -150px !important;
+	 height: 540px !important;
+}
+
+#polite-slide-in-right-XMd6TjxKvemlwWHsnQKE-div {
+	background: transparent !important;
+	right: -25px !important;
+}
+#polite-slide-in-right-XMd6TjxKvemlwWHsnQKE-minimize-icon {
+position: absolute;
+    right: 50px;
+    top: -85px;
+}
+
+.et_pb_menu_page_id-22619 {
+	color: #fff !important;
+}
+
+.et_pb_menu_page_id-22619 a {
+    padding: 5px 30px 5px 30px !important;
+    background: #85ADD5 !important;
+    color: #ffffff !important;
+    height: 40px !important;
+    margin-top: 17px !important;
+	margin-right: 10px;
+}
+
+.et_pb_menu_0_tb_header.et_pb_menu ul li.et_pb_menu_page_id-22619 a {
+	color: #fff !important;
+}
+
+/*BUYING A PROPERTY CSS  */
+.page-id-22843 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title, 
+.page-id-22991 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title, 
+.page-id-23025 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title, 
+.page-id-23069 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title, 
+.page-id-23170 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title, 
+.page-id-23220 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title, 
+.page-id-23221 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title, 
+.page-id-23514 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title, 
+.page-id-24638 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title, 
+.page-id-24760 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title  {
+    background: #1b3657;
+	  padding: 20px;
+}
+
+.page-id-22843 .bap-faq.et_pb_toggle_item.et_pb_toggle_close, 
+.page-id-22991 .bap-faq.et_pb_toggle_item.et_pb_toggle_close, 
+.page-id-23025 .bap-faq.et_pb_toggle_item.et_pb_toggle_close, 
+.page-id-23069 .bap-faq.et_pb_toggle_item.et_pb_toggle_close, 
+.page-id-23170 .bap-faq.et_pb_toggle_item.et_pb_toggle_close, 
+.page-id-23220 .bap-faq.et_pb_toggle_item.et_pb_toggle_close, 
+.page-id-23221 .bap-faq.et_pb_toggle_item.et_pb_toggle_close, 
+.page-id-23514 .bap-faq.et_pb_toggle_item.et_pb_toggle_close, 
+.page-id-24638 .bap-faq.et_pb_toggle_item.et_pb_toggle_close, 
+.page-id-24760 .bap-faq.et_pb_toggle_item.et_pb_toggle_close {
+    padding: 20px !important;
+}
+.page-id-22843 .et_pb_toggle_content,
+.page-id-22991 .et_pb_toggle_content,
+.page-id-23025 .et_pb_toggle_content,
+.page-id-23069 .et_pb_toggle_content,
+.page-id-23170 .et_pb_toggle_content,
+.page-id-23220 .et_pb_toggle_content,
+.page-id-23221 .et_pb_toggle_content,
+.page-id-23514 .et_pb_toggle_content,
+.page-id-24638 .et_pb_toggle_content,
+.page-id-24760 .et_pb_toggle_content {
+    padding: 20px;
+}
+.page-id-22843 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title::before,
+.page-id-22991 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title::before,
+.page-id-23025 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title::before,
+.page-id-23069 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title::before,
+.page-id-23170 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title::before,
+.page-id-23220 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title::before,
+.page-id-23221 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title::before,
+.page-id-23514 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title::before,
+.page-id-24638 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title::before,
+.page-id-24760 .bap-faq.et_pb_toggle_item.et_pb_toggle_open h5.et_pb_toggle_title::before {
+    padding-right: 20px !important;
+}
+.page-id-22843 .bap-faq.et_pb_toggle_item.et_pb_toggle_close h5.et_pb_toggle_title::before,
+.page-id-22991 .bap-faq.et_pb_toggle_item.et_pb_toggle_close h5.et_pb_toggle_title::before,
+.page-id-23025 .bap-faq.et_pb_toggle_item.et_pb_toggle_close h5.et_pb_toggle_title::before,
+.page-id-23069 .bap-faq.et_pb_toggle_item.et_pb_toggle_close h5.et_pb_toggle_title::before,
+.page-id-23170 .bap-faq.et_pb_toggle_item.et_pb_toggle_close h5.et_pb_toggle_title::before,
+.page-id-23220 .bap-faq.et_pb_toggle_item.et_pb_toggle_close h5.et_pb_toggle_title::before,
+.page-id-23221 .bap-faq.et_pb_toggle_item.et_pb_toggle_close h5.et_pb_toggle_title::before,
+.page-id-23514 .bap-faq.et_pb_toggle_item.et_pb_toggle_close h5.et_pb_toggle_title::before,
+.page-id-24638 .bap-faq.et_pb_toggle_item.et_pb_toggle_close h5.et_pb_toggle_title::before,
+.page-id-24760 .bap-faq.et_pb_toggle_item.et_pb_toggle_close h5.et_pb_toggle_title::before {
+	padding-right: 0px !important;
+}
+    
+
+/* Blog grid: hide on single posts */
+.single-post .et_pb_section_1tb_header {
+  display: none;
+}
+
+/* Blog category filter tabs */
+.blog-category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0 40px;
+  padding: 0;
+  list-style: none;
+}
+.blog-category-filters a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #f5f5f5;
+  color: #1a2332;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.blog-category-filters a:hover,
+.blog-category-filters a.active {
+  background: #1a2332;
+  color: #ffffff;
+}
+
+/* Hide duplicate viewport: CSS can't fix this — see Task 4 */
+
+/* Orphaned search bar: hide */
+.et_pb_widget.widget_search {
+  display: none !important;
+}
+/*END - BUYING A PROPERTY CSS*/
+
+/* Remove blog sidebar and line */
+.blog .sidebar, .blog .et_pb_sidebar, .archive .sidebar, .archive .et_pb_sidebar { display: none !important; }
+.blog .et_pb_row, .archive .et_pb_row { max-width: 100% !important; }
+
+/* Force blog posts full width */
+.blog .et_pb_blog_grid .et_pb_post, .blog .et_pb_post { width: 100% !important; max-width: 1080px; margin-left: auto !important; margin-right: auto !important; }

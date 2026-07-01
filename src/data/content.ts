@@ -17,16 +17,16 @@ export const lenders = [
 
 export const painPoints = [
   {
-    strong: 'Positive Cash Flow',
-    text: ' — invest in properties that will give you a positive cash flow.',
+    strong: '',
+    text: 'Invest in properties that will give you a positive cash flow.',
   },
   {
-    strong: 'Expert Support',
-    text: ' — feel confident knowing that you have a team of experts with you all the way.',
+    strong: '',
+    text: 'Feel confident knowing that you have a team of experts with you all the way.',
   },
   {
-    strong: 'Financial Education',
-    text: ' — equip yourself with the financial education you were never given.',
+    strong: '',
+    text: 'Set your family up for a brighter future by equipping yourself with the financial education you were never given.',
   },
 ] as const
 
@@ -194,5 +194,11 @@ export const podcastContent = {
   eyebrow: 'Podcast',
   title: 'Debt to Financial Freedom Podcast',
   description:
-    "Hosted by Victor Lagos — sharing raw, honest stories and lessons from 17 years in finance to help you take control of your finances and create lasting financial freedom.",
+    "Welcome to the Debt Financial Freedom Podcast. I'm your host Victor Lagos and the founder of Lagos Financial.",
+  paragraphs: [
+    "I've been in the finance and lending industry for 17 years and I've personally made financial mistakes and learned from them.",
+    "I've started this Podcast to share stories and lessons on my own journey, and to share insight that may help others on their journey, and I interviewed people that I connected with, that share my values and mission to help other create financial freedom.",
+    'My goal in this podcast is to share raw, honest, transparent, and helpful stories that you can relate to, and inspires you to take control of your finances.',
+    'And only have debt that brings you closer to financial freedom.',
+  ],
 } as const

@@ -21,7 +21,7 @@ export const pageHeroImages: Record<string, string> = {
 export const pageAccentLines: Record<string, string> = {
   '/about-us': 'Built on Trust.',
   '/bondi': 'Sydney Specialists.',
-  '/launceston': 'Local Expertise.',
+  '/launceston': 'Tasmania Specialists.',
   '/buying-a-property': 'Your First Home.',
   '/refinance-your-home': 'Save More.',
   '/property-investment': 'Build Wealth.',
